@@ -1,0 +1,38 @@
+<div class="login" flex layout="column" >
+
+<h2 class="md-display-2">Welcome back!</h2>
+
+<div hide-xs></div>
+
+<div class="form_box">
+  <form ng-submit="login_vm.login_form_submit()" role="form" ng-init="login_vm.loginForm = {}" layout-padding md-whiteframe="3" class="white_card block_form">
+ 		<md-input-container class="md-block">
+    	<label>email</label>
+    	<md-icon class="material-icons">email</md-icon> 
+    	<input type="email" name="email" ng-model="login_vm.loginForm.email" required="required"/>
+  	</md-input-container>
+		<md-input-container class="md-block">
+    	<label>password</label>
+    	<md-icon class="material-icons">lock</md-icon> 
+    	<input type="password" name="password" ng-model="login_vm.loginForm.password" required="required"/>
+  	</md-input-container>
+  	<div layout="row" layout-align="center">
+  		<md-button type="submit" class="md-raised md-primary">LogIn</md-button>
+  	</div>
+    <hr>
+    <div layout="column" layout-align="center">
+      <md-button class="md-raised" flex="100" ng-click="omniauthGoogle()">
+        <img class="png-icon" src="images/omniauth_icons/google.png" alt="Google icon">
+        Google
+      </md-button>
+      <md-button class="md-raised" flex="100" ng-click="omniauthFacebook()">
+        <img class="png-icon" src="images/omniauth_icons/facebook.png" alt="Facebook icon">
+        Facebook
+      </md-button>
+      <a ng-href="#/users/password/new">Forgot Password?</a>
+      <a ng-href="#/users/sign_up">Create new Account</a>
+    </div>
+	</form>
+</div>
+
+</div>

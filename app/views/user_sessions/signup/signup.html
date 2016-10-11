@@ -1,0 +1,48 @@
+<div class="signup" flex layout="column" >
+
+<h2 class="md-display-2">Welcome aboard!</h2>
+
+<div hide-xs></div>
+
+<div class="form_box">
+  <form ng-submit="signup_vm.signup_form_submit()" role="form" ng-init="signup_vm.registrationForm = {}" layout-padding md-whiteframe="3" class="white_card block_form">
+		<md-input-container class="md-block">
+ 			<label>name</label>
+ 			<md-icon class="material-icons">person</md-icon> 
+  		<input type="name" name="name" ng-model="signup_vm.registrationForm.name" required="required"/>
+  	</md-input-container>
+ 		<md-input-container class="md-block">
+    	<label>email</label>
+    	<md-icon class="material-icons">email</md-icon> 
+    	<input type="email" name="email" ng-model="signup_vm.registrationForm.email" required="required"/>
+  	</md-input-container>
+		<md-input-container class="md-block">
+    	<label>password</label>
+    	<md-icon class="material-icons">lock</md-icon> 
+    	<input type="password" name="password" ng-model="signup_vm.registrationForm.password" required="required"/>
+  	</md-input-container>
+  	<md-input-container class="md-block">
+    	<label>password confirmation</label>
+    	<md-icon class="material-icons">lock</md-icon> 
+    	<input type="password" name="password_confirmation" ng-model="signup_vm.registrationForm.password_confirmation" required="required"/>
+  	</md-input-container>
+  	<div layout="row" layout-align="center">
+  		<md-button type="submit" class="md-raised md-primary">SignUp</md-button>
+  	</div>
+    <hr>
+    <div layout="column" layout-align="center">
+      <md-button class="md-raised" flex="100" ng-click="signup_vm.omniauthGoogle()">
+        <img class="png-icon" src="images/omniauth_icons/google.png" alt="Google icon">
+        Google
+      </md-button>
+      <md-button class="md-raised" flex="100" ng-click="signup_vm.omniauthFacebook()">
+        <img class="png-icon" src="images/omniauth_icons/facebook.png" alt="Facebook icon">
+        Facebook
+      </md-button>
+      <a ng-href="#/users/password/new">Forgot Password?</a>
+      <a ng-href="#/users/log_in">Log in to your account</a>
+    </div>
+	</form>
+</div>
+
+</div>

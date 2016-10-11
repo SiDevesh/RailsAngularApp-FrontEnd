@@ -1,0 +1,17 @@
+<div class="password_new">
+	<md-toolbar layout="row" class="md-hue-1">
+		<div class="md-toolbar-tools">
+			<span>Enter your registered e-mail and we will send you a password reset link in your inbox.</span>
+		</div>
+    </md-toolbar>
+	<form ng-submit="password_new_vm.password_new_form_submit()" role="form" ng-init="password_new_vm.pwdResetForm = {}" layout-padding md-whiteframe="3">
+ 		<md-input-container class="md-block">
+    		<label>email</label>
+    		<md-icon class="material-icons">email</md-icon> 
+    		<input type="email" name="email" ng-model="password_new_vm.pwdResetForm.email" required="required"/>
+  		</md-input-container>
+  		<div layout="row" layout-align="center">
+  			<md-button type="submit" class="md-raised md-primary">Send</md-button>
+  		</div>
+	</form>
+</div>

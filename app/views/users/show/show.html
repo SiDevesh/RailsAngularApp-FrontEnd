@@ -1,0 +1,27 @@
+<div layout="column" layout-gt-md="row" flex="100" class="user_show">
+	<div flex="nogrow" flex-order-gt-md="2" layout="column" layout-align="center center" layout-align-gt-md="start center" md-whiteframe="2">
+		<img ng-src="{{user_show_vm.the_user.image.url}}" alt="Profile photo">
+	</div>
+	<div flex flex-order-gt-md="1">
+		<md-toolbar hide show-gt-md layout="row" class="md-hue-1">
+			<div class="md-toolbar-tools">
+				<span>User Details</span>
+			</div>
+    	</md-toolbar>
+		<md-divider></md-divider>
+		<md-subheader class="md-no-sticky">Name</md-subheader>
+		<md-list>
+			<md-list-item><span>{{user_show_vm.the_user.name}}</span></md-list-item class="md-3-line">
+		</md-list>
+		<md-divider></md-divider>
+		<md-subheader class="md-no-sticky">Email</md-subheader>
+		<md-list>
+			<md-list-item><span>{{user_show_vm.the_user.email}}</span></md-list-item class="md-3-line">
+		</md-list layout-padding>
+		<md-divider></md-divider>
+	</div>
+</div>
+
+<md-button ng-if="user_show_vm.this_user()" ng-href="#/users/{{user.id}}/edit" class="md-fab" aria-label="Edit Profile">
+  <md-icon class="material-icons">edit</md-icon>
+</md-button>

@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html lang="en" ng-app="myApp" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html lang="en" ng-app="myApp" class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html lang="en" ng-app="myApp" class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html lang="en" ng-app="myApp" class="no-js"> <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>RailsAngularUsersApp</title>
+  <meta name="description" content="An example app with angularjs frontend and rails 5 --api backend with users authentication and listing">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+  
+  <!-- In production use:
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.min.css" />
+
+  <script src="https://ajax.googleapis.com/ajax/libs/angular_material/1.0.9/angular-material.min.css"></script>
+
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,400italic">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+  #list other css from CDN here
+  #Fix version number before release
+  -->
+
+  <link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/normalize.css">
+
+  <script src="bower_components/html5-boilerplate/dist/js/vendor/modernizr-2.8.3.min.js"></script>
+
+  <link rel="stylesheet" href="/bower_components/angular-material/angular-material.css">
+
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,400italic">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+  <link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/main.css">
+  <link rel="stylesheet" href="app.css">
+
+
+</head>
+
+<!-- ------------------------------------------------------------------------------------ -->
+
+<body layout="row">
+  <div layout="column" flex>
+
+  <!-- TOOLBAR--------------------------------------- -->
+    <md-toolbar class="md-hue-2" ng-controller="TitleBarController as titlebar_vm">
+      <div class="md-toolbar-tools">
+        <md-button class="md-icon-button" ng-click="titlebar_vm.openLeftMenu()" hide-gt-md>
+          <md-icon class="material-icons">menu</md-icon> 
+        </md-button>
+        <md-button class="md-icon-button" ng-href="/"  hide show-gt-md>
+          <md-icon class="material-icons">notes</md-icon> 
+        </md-button>
+        <h2>
+          <span ng-bind="titlebar_vm.titlebar_name"></span>
+        </h2>
+        <span flex></span>
+        <md-button class="md-icon-button">
+          <md-icon class="material-icons">favorite</md-icon> 
+        </md-button>
+        <md-menu md-offset="60" md-position-mode="target-right target">
+          <!-- Trigger element is a md-button with an icon -->
+          <md-button ng-click="$mdOpenMenu($event)" class="md-icon-button">
+            <md-icon class="material-icons">more_vert</md-icon> 
+          </md-button>
+          <md-menu-content>
+            <md-menu-item><md-button ng-href="#/users/{{user.id}}">My Profile</md-button></md-menu-item>
+            <md-menu-item><md-button ng-href="#/users">All Users</md-button></md-menu-item>
+          </md-menu-content>
+        </md-menu>
+      </div>
+    </md-toolbar>
+  <!-- /TOOLBAR--------------------------------------- -->
+
+    <div layout="row" flex>
+
+  <!-- SIDEBAR---------------------------------------- -->
+      <md-sidenav md-component-id="left" md-disable-backdrop md-whiteframe="3" md-is-locked-open="$mdMedia('gt-md')" class="md-sidenav-left">
+        <div ng-include="'views/shared/sidenav/sidenav.html'" ng-controller="SidenavController as sidenav_vm" layout="column" flex layout-fill></div>
+      </md-sidenav>
+  <!-- /SIDEBAR--------------------------------------- -->
+
+  <!-- VIEW-CONTENT----------------------------------- -->
+      <md-content ng-view flex layout="column" ></md-content>
+  <!-- /VIEW-CONTENT---------------------------------- -->
+
+    </div>
+
+  </div>
+
+
+  <!-- ------------------------------------------------------------------------------------ -->
+  <!--[if lt IE 7]>
+      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+  <![endif]-->
+
+  <!-- In production use:
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular-route.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular-aria.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular-resource.min.js"></script>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular-animate.min.js"></script>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/angular_material/1.0.9/angular-material.min.js"></script>
+
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular-cookie/4.1.0/angular-cookie.min.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/ng-token-auth/0.0.29/ng-token-auth.min.js"></script>
+
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/danialfarid-angular-file-upload/12.2.11/ng-file-upload.min.js"></script>
+
+  #list other js from CDN here
+  #Fix version number before release
+  -->
+
+  <script src="bower_components/angular/angular.js"></script>
+  <script src="bower_components/angular-route/angular-route.js"></script>
+  <script src="/bower_components/angular-aria/angular-aria.js"></script>
+  <script src="bower_components/angular-resource/angular-resource.js"></script>
+
+  <script src="/bower_components/angular-animate/angular-animate.js"></script>
+
+  <script src="/bower_components/angular-material/angular-material.js"></script>
+
+  <script src="/bower_components/angular-cookie/angular-cookie.js"></script>
+  <script src="/bower_components/ng-token-auth/dist/ng-token-auth.js"></script>
+
+  <script src="/bower_components/ng-file-upload/ng-file-upload.js"></script>
+
+  <script src="app.js"></script>
+
+  <script src="views/shared/sidenav/sidenav.js"></script>
+  <script src="views/home/home.js"></script>
+  <script src="views/settings/settings.js"></script>
+
+  <script src="views/user_sessions/signup/signup.js"></script>
+  <script src="views/user_sessions/login/login.js"></script>
+  <script src="views/user_sessions/edit/edit.js"></script>
+  <script src="views/user_sessions/password_new/new.js"></script>
+  <script src="views/user_sessions/password_edit/edit.js"></script>
+
+  <script src="views/users/index/index.js"></script>
+  <script src="views/users/show/show.js"></script>
+
+  <script src="components/version/version.js"></script>
+  <script src="components/version/version-directive.js"></script>
+  <script src="components/version/interpolate-filter.js"></script>
+
+</body>
+</html>

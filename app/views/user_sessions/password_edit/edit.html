@@ -1,0 +1,22 @@
+<div class="password_edit">
+  <md-toolbar layout="row" class="md-hue-1">
+    <div class="md-toolbar-tools">
+      <span>Enter your new password.</span>
+    </div>
+  </md-toolbar>
+  <form ng-submit="password_edit_vm.password_edit_form_submit()" role="form" ng-init="password_edit_vm.updatePasswordForm = {}" layout-padding md-whiteframe="3">
+		<md-input-container class="md-block">
+    	<label>password</label>
+    	<md-icon class="material-icons">lock</md-icon> 
+    	<input type="password" name="password" ng-model="password_edit_vm.updatePasswordForm.password" required="required"/>
+  	</md-input-container>
+  	<md-input-container class="md-block">
+    	<label>password confirmation</label>
+    	<md-icon class="material-icons">lock</md-icon> 
+    	<input type="password" name="password_confirmation" ng-model="password_edit_vm.updatePasswordForm.password_confirmation" required="required"/>
+  	</md-input-container>
+  	<div layout="row" layout-align="center">
+  		<md-button type="submit" class="md-raised md-primary">Done</md-button>
+  	</div>
+	</form>
+</div>

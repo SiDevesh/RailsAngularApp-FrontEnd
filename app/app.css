@@ -1,0 +1,230 @@
+/* app css stylesheet */
+
+.photo_background {
+  background-image: url("/images/stock_bg.jpg");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+.white_card {
+  background-color: #B2DFDB;
+}
+
+@media only screen and (max-width: 599px) {
+  .white_card {
+    width: 88vw !important;
+  }
+}
+
+@media only screen and (min-height: 578px) and (max-width: 1279px) {
+  .form_box {
+    position:fixed;
+    bottom:0px;
+    left:0px;
+    width:100%;
+  }
+}
+
+.block_form {
+  margin-left:10px;
+  margin-right:10px;
+  margin-bottom:10px;
+  margin-top:auto;
+  display:inline-block;
+  width:auto;
+}
+
+.png-icon {
+  width:24px;
+  height:24px;
+}
+
+.sidenav_top_background {
+  background-color: teal;
+  min-height:7.5em;
+  height:20%;
+}
+
+.sidenav_top_background > div:first-child {
+  padding:0px;
+}
+
+.sidenav_top_background > div:nth-child(2) {
+  height:30%;
+  color:white;
+  margin:0px;
+  padding:0px;
+}
+
+.sidenav_top_background > div:nth-child(2) > p {
+  margin:0px;
+  padding:0px;
+  text-overflow:ellipsis;
+}
+
+.sidenav_top_background > div:nth-child(2) > p:first-child {
+  font-size:0.95em;
+  font-weight:500;
+}
+
+.sidenav_top_background > div:nth-child(2) > p:nth-child(2) {
+  font-size:0.85em;
+  font-weight:400;
+}
+
+.sidenav_top_background > div:first-child > div > img {
+  display:block;border-radius:50%;
+  max-width:10vmax;
+  width:30%;
+}
+
+.user_show > div:first-child > img {
+  border-radius:50%;
+  width:35vmin;
+  margin:20px;
+}
+
+.user_show md-subheader {
+  background-color:initial;
+}
+
+.user_show + .md-fab {
+  position:fixed;
+  bottom:16px;
+  right:16px;
+  box-shadow:0 0 4px rgba(0,0,0,.14),0 4px 8px rgba(0,0,0,.28);
+}
+
+.user_index img {
+  height:100%;
+  width:100%;
+  border-radius:50%;
+}
+
+.signup > h2 {
+  color:black;
+  text-align:center;
+}
+
+.signup > div:nth-child(2) {
+  height:20vh;
+}
+
+.signup > .form_box {
+  text-align:center;
+}
+
+.signup > .form_box > form > hr {
+  margin-bottom:0px;
+}
+
+.signup > .form_box > form > hr {
+  margin-bottom:0px;
+}
+
+.password_new {
+  text-align:center;
+}
+
+.password_new > md-toolbar span {
+  font-style:italic;
+  font-size:0.7em;
+}
+
+.password_edit {
+  text-align:center;
+}
+
+.password_edit > md-toolbar span {
+  font-style:italic;
+  font-size:0.7em;
+}
+
+.login > h2 {
+  color:black;
+  text-align:center;
+}
+
+.login > div:nth-child(2) {
+  height:20vh;
+}
+
+.login > .form_box {
+  text-align:center;
+}
+
+.login > .form_box > form {
+  margin-left:10px;
+  margin-right:10px;
+  margin-bottom:10px;
+  margin-top:auto;
+  display:inline-block;
+  width:auto;
+}
+
+.login > .form_box > form > hr {
+  margin-bottom:0px;
+}
+
+.login > .form_box > form > hr {
+  margin-bottom:0px;
+}
+
+.user_update {
+  text-align:center;
+}
+
+.user_update .photo_update_circles_block {
+  width:35vmin;
+  height:35vmin;
+  margin:20px;
+  position:relative;
+}
+
+.user_update .photo_update_circles_block > .md-fab.md-mini:nth-child(2) {
+  position:absolute;
+  bottom:3.2vmin;
+  right:3.2vmin;
+  margin:0px;
+}
+
+.user_update .photo_update_circles_block > .md-fab.md-mini:nth-child(3) {
+  position:absolute;
+  bottom:3.2vmin;
+  left:3.2vmin;
+  margin:0px;
+}
+
+.user_update .photo_update_circles_block > div:first-child {
+  width:inherit;
+  height:inherit;
+  overflow:hidden;
+  border-radius:50%;
+  position:relative;
+  z-index:1;
+}
+
+.user_update .photo_update_circles_block > div:first-child > .invalid_photo_card {
+  height:inherit;
+  width:inherit;
+  position:absolute;
+  top:0px;
+  overflow:hidden;
+}
+
+.user_update .photo_update_circles_block > div:first-child > img {
+  height:inherit;
+}
+
+.user_update .photo_update_circles_block > div:first-child > .invalid_photo_card > div:nth-child(2) {
+  background-color:#F44336;
+  box-shadow: 0 -4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+.user_update .photo_update_circles_block > div:first-child > .invalid_photo_card > div:nth-child(2) > p {
+  font-size:0.9em;
+  color:white;
+  margin:0px;
+}

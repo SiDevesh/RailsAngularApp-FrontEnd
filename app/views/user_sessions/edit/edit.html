@@ -1,0 +1,59 @@
+<div class="user_update">
+  <form name="profic_form" layout="row" layout-align="center center" md-whiteframe="2" role="form" ng-submit="user_update_vm.profic_update_form_submit()" ng-init="user_update_vm.proficUpdateForm">
+    <md-button class="md-fab md-mini" type="submit" hide show-xs ng-disabled="profic_form.$invalid || profic_form.$pristine">
+      <md-icon class="material-icons">done</md-icon>
+    </md-button>
+    <div class="photo_update_circles_block">
+      <div>
+        <img ngf-src="user_update_vm.proficUpdateForm.profic" ng-if="user_update_vm.proficUpdateForm.profic" alt="Profile photo">
+        <img ng-src="{{user_update_vm.profic_image}}" ng-if="!user_update_vm.proficUpdateForm.profic" alt="Profile photo">
+        <div ng-if="profic_form.$invalid" class="invalid_photo_card">
+          <div style="width:inherit;height:50%;"></div>
+          <div style="width:inherit;height:50%;">
+            <p class="md-title">Choose a photo less than 5 mb</p>
+            <md-icon class="material-icons">error</md-icon>
+          </div>
+        </div>
+      </div>
+      <md-button class="md-fab md-mini" ngf-select ng-model="user_update_vm.proficUpdateForm.profic" name="profic" ngf-pattern="'image/*'" ngf-accept="'image/*'" ngf-fix-orientation="true" ngf-max-size="5MB" ngf-min-height="200" ngf-min-width="200" ngf-resize="{width: 200, height: 200, centerCrop: true, restoreExif: false}" hide-xs>
+        <md-icon class="material-icons">camera</md-icon>
+      </md-button>
+      <md-button class="md-fab md-mini" type="submit" hide-xs ng-disabled="profic_form.$invalid || profic_form.$pristine">
+        <md-icon class="material-icons">done</md-icon>
+      </md-button>
+    </div>
+    <md-button class="md-fab md-mini" ngf-select ng-model="user_update_vm.proficUpdateForm.profic" name="profic" ngf-pattern="'image/*'" ngf-accept="'image/*'" ngf-fix-orientation="true" ngf-max-size="5MB" ngf-min-height="200" ngf-min-width="200" ngf-resize="{width: 200, height: 200, centerCrop: true, restoreExif: false}" hide show-xs>
+      <md-icon class="material-icons">camera</md-icon>
+    </md-button>
+  </form>
+  <form name="detail_form" ng-submit="user_update_vm.user_update_form_submit()" role="form" ng-init="user_update_vm.updateAccountForm" layout-padding md-whiteframe="3">
+	<md-input-container class="md-block">
+ 		<label>name</label>
+ 		<md-icon class="material-icons">person</md-icon> 
+  		<input type="name" name="name" ng-model="user_update_vm.updateAccountForm.name" required="required"/>
+  	</md-input-container>
+ 	<md-input-container class="md-block">
+    	<label>email</label>
+    	<md-icon class="material-icons">email</md-icon> 
+    	<input type="email" name="email" ng-model="user_update_vm.updateAccountForm.email" required="required"/>
+  	</md-input-container>
+		<md-input-container class="md-block">
+    	<label>new password</label>
+    	<md-icon class="material-icons">lock</md-icon> 
+    	<input type="password" name="password" ng-model="user_update_vm.updateAccountForm.password"/>
+  	</md-input-container>
+  	<md-input-container class="md-block">
+    	<label>new password confirmation</label>
+    	<md-icon class="material-icons">lock</md-icon> 
+    	<input type="password" name="password_confirmation" ng-model="user_update_vm.updateAccountForm.password_confirmation"/>
+  	</md-input-container>
+  	<md-input-container class="md-block">
+    	<label>current password</label>
+    	<md-icon class="material-icons">lock</md-icon> 
+    	<input type="password" name="current_password" ng-model="user_update_vm.updateAccountForm.current_password" required="required"/>
+  	</md-input-container>
+  	<div layout="row" layout-align="center">
+  		<md-button type="submit" class="md-raised md-primary">Send</md-button>
+  	</div>
+	</form>
+</div>

@@ -1,0 +1,55 @@
+<div flex="noshrink" layout="column" hide-gt-md class="sidenav_top_background" layout-padding>
+	<div flex="70" layout="row">
+		<div layout="column" layout-align="center" flex>
+			<img ng-src="{{ sidenav_vm.UserInfoProfic() }}" ng-click="sidenav_vm.gotoUserInfoOrLogin()" alt="Profile photo">
+		</div>
+	</div>
+	<div flex="noshrink" layout-padding>
+		<p>{{ sidenav_vm.UserInfoName() }}</p>
+		<p>{{ sidenav_vm.UserInfoEmail() }}</p>
+	</div>
+</div>
+<div flex="80" flex-gt-md="100">
+	<md-list>
+
+		<md-list-item ng-click="sidenav_vm.gotoUserInfoOrLogin()" class="noright" hide show-gt-md>
+    		<img alt="profile picture" ng-src="{{ sidenav_vm.UserInfoProfic() }}" class="md-avatar" alt="Profile photo"/>
+   			<p>{{ sidenav_vm.UserInfoName() }}</p>
+		</md-list-item>
+		<md-divider hide show-gt-md></md-divider>
+		<md-list-item ng-click="sidenav_vm.gotoHome()">
+   			<md-icon class="md-avatar-icon material-icons">home</md-icon>
+   			<p>Home</p>
+		</md-list-item>
+		<md-list-item ng-click="null">
+   			<md-icon class="md-avatar-icon material-icons">person</md-icon>
+   			<p>Item content in list</p>
+		</md-list-item>
+		<div ng-if="user.id">
+			<md-divider ></md-divider>
+			<md-list-item ng-click="sidenav_vm.gotoSettings()">
+  				<md-icon class="md-avatar-icon material-icons">settings</md-icon>
+   				<p>Settings</p>
+			</md-list-item>
+			<md-list-item ng-click="sidenav_vm.logout_button_click()">
+   				<md-icon class="md-avatar-icon material-icons">exit_to_app</md-icon>
+   				<p>Log Out</p>
+			</md-list-item>
+			<md-list-item ng-click="sidenav_vm.destroy_button_click()">
+   				<md-icon class="md-avatar-icon material-icons">delete</md-icon>
+   				<p>Delete Account</p>
+			</md-list-item>
+		</div>
+		<div ng-if="!user.id">
+			<md-divider ></md-divider>
+			<md-list-item ng-click="sidenav_vm.gotoLogIn()">
+  				<md-icon class="md-avatar-icon material-icons">account_circle</md-icon>
+   				<p>Log In</p>
+			</md-list-item>
+			<md-list-item ng-click="sidenav_vm.gotoSignUp()">
+   				<md-icon class="md-avatar-icon material-icons">person_add</md-icon>
+   				<p>Sign Up</p>
+			</md-list-item>
+		</div>
+	</md-list>
+</div>

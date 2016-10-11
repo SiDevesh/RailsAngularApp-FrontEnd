@@ -1,0 +1,20 @@
+<div ng-repeat="a_user in user_index_vm.users" class="user_index">
+<md-card>
+  <md-card-title>
+    <md-card-title-text>
+      <span class="md-headline">{{a_user.name}}</span>
+      <span class="md-subhead">{{a_user.email}}</span>
+    </md-card-title-text>
+    <md-card-title-media>
+      <div class="md-media-sm card-media">
+      	<img ng-src="{{a_user.image.url}}" alt="Profile photo">
+      </div>
+    </md-card-title-media>
+  </md-card-title>
+  <md-card-actions layout="row" layout-align="end center">
+    <md-button ng-href="#/users/{{a_user.id}}">View</md-button>
+    <md-button>Follow</md-button>
+  </md-card-actions>
+</md-card>
+</div>
+<md-button ng-click="user_index_vm.get_next_page()" ng-disabled="user_index_vm.no_more">More</md-button>
