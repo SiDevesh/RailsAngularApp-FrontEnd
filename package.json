@@ -1,9 +1,9 @@
 {
-  "name": "angular-seed",
+  "name": "rails-angular-users-app",
   "private": true,
-  "version": "0.0.0",
-  "description": "A starter project for AngularJS",
-  "repository": "https://github.com/angular/angular-seed",
+  "version": "1.0.0",
+  "description": "An example app with angularjs frontend and rails 5 --api backend with users authentication and listing",
+  "repository": "https://github.com/SiDevesh/RailsAngularApp-FrontEnd",
   "license": "MIT",
   "devDependencies": {
     "bower": "^1.7.7",

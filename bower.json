@@ -2,7 +2,7 @@
   "name": "rails-angular-users-app",
   "description": "An example app with angularjs frontend and rails 5 --api backend with users authentication and listing",
   "version": "1.0.0",
-  "homepage": "https://github.com/angular/angular-seed",
+  "homepage": "https://github.com/SiDevesh/RailsAngularApp-FrontEnd",
   "license": "MIT",
   "private": true,
   "dependencies": {
